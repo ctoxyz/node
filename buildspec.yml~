@@ -3,11 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo INSTALL PHASE
       - npm install
   build:
     commands:
-      - echo BUILD PHASE    
+      - npm test
 artifacts:
   files:
     - '**/*'
