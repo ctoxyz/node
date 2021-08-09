@@ -1,13 +1,44 @@
 version: 0.2
 
+
 phases:
-  install:
-    commands:
-      - echo INSTALL PHASE
-      - npm install
-  build:
-    commands:
-      - echo BUILD PHASE    
-artifacts:
-  files:
-    - '**/*'
+	install:
+    runtime-versions:
+      nodejs: 14  
+		commands:
+			# install node 14
+			- echo n8nodeSetup
+			- echo Installing node...
+			- curl -sL https://deb.nodesource.com/setup_14.x | bash -
+			- apt install -y nodejs
+			# install mongo
+			- echo installing mongo...
+			- apt install -y mongo
+			- yum install -y mongodb-org
+			# misc yarn or npm
+			- apt install --no-install-recommends yarn
+	pre_build:
+		commands:
+					# install dependencies
+					- echo Installing Dependencies...started `date`
+					- npm install
+					- yarn
+					- #process reload
+					- systemctl daemon-reload
+					- #start mongodb process
+					- systemctl start mongod
+					- systemctl enable mongod
+	build:
+		commands:
+			# tests
+			- echo Testing...
+			- yarn test
+			- echo Building...
+			- yarn build
+artifacts
+	files:
+		- index.html
+		- node_modules/**/*
+		- "**/*"
+		# discard-paths: no
+		# base-directory: dist					
