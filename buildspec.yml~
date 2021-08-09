@@ -34,11 +34,11 @@ phases:
             - yarn test
             - echo Building...
             - yarn build
-artifacts:
+artifacts
     files:
-      - index.html
-      - node_modules/**/*
-      - "**/*"
+        - index.html
+        - node_modules/**/*
+        - "**/*"
     # discard-paths: no
     base-directory: '/var/www/html/'
 
