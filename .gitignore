@@ -1,5 +1,7 @@
-.un~
-.bak
-.*~
-.html~
-.yml~
+# gitignore n8
+
+*.un~
+*.bak
+*.*~
+*.html~
+*.yml~
