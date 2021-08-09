@@ -37,7 +37,7 @@ phases:
 artifacts:
     files:
       - index.html
-   i  - node_modules/**/*
+      - node_modules/**/*
       - "**/*"
     # discard-paths: no
     base-directory: '/var/www/html/'
