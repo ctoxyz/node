@@ -8,8 +8,9 @@ phases:
             # tests
             - echo Testing...
 artifacts:
-  files:
-    - /index.html
-  name: artifact-name
-    - source: /
-      destination: /
+    files:
+      #- index.html
+      #- node_modules/**/*
+      - "**/*"
+    # discard-paths: no
+    base-directory: '/'
