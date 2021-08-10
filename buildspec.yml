@@ -9,7 +9,7 @@ phases:
             - echo Testing...
 artifacts:
     files:
-      - index.html
+      - /index.html
       #- node_modules/**/*
       #- "**/*"
     # discard-paths: no
