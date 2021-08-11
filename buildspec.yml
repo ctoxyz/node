@@ -10,8 +10,8 @@ phases:
       - echo INSTALLING > source NPM dependencies....
       - npm install
       - echo INSTALLING > http drivers for node
-      - apt-get update -y
-      - apt-get install -y apt-transport-https
+      - yum update -y
+      - yum install -y apt-transport-https
   build:
     commands:
       #- echo Build started on `date`
