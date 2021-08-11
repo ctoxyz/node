@@ -7,17 +7,19 @@ phases:
       - echo Installing
   pre_build:
     commands:
-      - echo Installing source NPM dependencies.
+      - echo INSTALLING > source NPM dependencies....
       - npm install
+      - echo INSTALLING > http drivers for node
+      - apt-get update -y
+      - apt-get install -y apt-transport-https
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Node.js code
-      - npm run build
+      #- echo Build started on `date`
+      #- echo Compiling the Node.js code
+      #- npm run build
   post_build:
     commands:
-      - echo Build completed on `date`
+      #- echo Build completed on `date`
 artifacts:
   files:
     - '**/*'
-    
