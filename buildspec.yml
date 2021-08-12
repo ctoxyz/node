@@ -11,7 +11,7 @@ phases:
       - npm install
       - echo INSTALLING > http drivers for node
       - yum update -y
-      - yum install -y apt-transport-https
+      #- yum install -y apt-transport-https
   build:
     commands:
       #- echo Build started on `date`
